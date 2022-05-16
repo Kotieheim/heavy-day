@@ -12,6 +12,7 @@ const Register = (props: Props) => {
         <h4 className="register-header">Register</h4>
         <div className="register-body">
           <form action="submit">
+            {/* make an item type for this */}
             {registrationMapper.map((item, index) => (
               <div key={index}>
                 <RegistrationInput
