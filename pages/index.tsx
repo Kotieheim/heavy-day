@@ -22,9 +22,6 @@ const Home: NextPage = () => {
           move this to a form{" "}
           <code className={styles.code}>pages/form.tsx</code>
         </p>
-        <Link href="/Form">
-          <a>To the form</a>
-        </Link>
       </main>
 
       {/* <footer className={styles.footer}>
