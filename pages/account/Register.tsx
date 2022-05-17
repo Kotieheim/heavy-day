@@ -11,15 +11,14 @@ const Register = (props: Props) => {
       <div className="register-container">
         <h4 className="register-header">Register</h4>
         <div className="register-body">
-          <form action="submit">
-            {/* make an item type for this */}
-            {registrationMapper.map((item, index) => (
-              <div key={index}>
-                <RegistrationInput
-                  labelText={item.label}
-                  inputName={item.input}
-                />
-              </div>
+          <form className="register-form" action="submit">
+            {/* make an input type for this */}
+            {registrationMapper.map((input, index) => (
+              <RegistrationInput
+                key={index}
+                labelText={input.label}
+                inputName={input.input}
+              />
             ))}
           </form>
         </div>

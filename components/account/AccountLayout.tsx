@@ -18,9 +18,9 @@ const AccountLayout = ({ title, children }: Props) => {
     }
   });
   return (
-    <div>
+    <div className="account-layout">
       <h1>{title ? title : "Placeholder Title"}</h1>
-      <div>{children}</div>
+      {children}
     </div>
   );
 };
