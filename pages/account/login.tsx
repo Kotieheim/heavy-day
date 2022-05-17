@@ -28,10 +28,10 @@ const Login = (props: Props) => {
             ))}
             <button className="register-form_submit">
               {formState.isSubmitting && <span className='register-form_spinner'></span>}
-              Register
+              Log In
             </button>
             {/* Make this close a modal if I change this into one */}
-            <Link href="/account/Login">Cancel</Link>
+            <Link href="/">Cancel</Link>
           </form>
         </div>
       </div>
