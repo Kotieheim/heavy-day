@@ -20,3 +20,16 @@ export const registrationMapper = [
     type: "password",
   },
 ];
+
+export const loginMapper = [
+  {
+    label: "Username",
+    input: "username",
+    type: "text",
+  },
+  {
+    label: "Password",
+    input: "password",
+    type: "password",
+  },
+]
