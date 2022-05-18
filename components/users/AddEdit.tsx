@@ -1,8 +1,11 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { formResolve, User } from "../../helpers/formValidation";
 import { registrationMapper } from "../../mappers/accountMapper";
+import { alertService } from "../../services/alert.service";
+import { userService } from "../../services/users.service";
 import RegistrationInput from "../account/RegistrationInput";
 
 type Props = {
@@ -11,9 +14,25 @@ type Props = {
 
 const AddEdit = ({ user }: Props) => {
   const { register, handleSubmit, reset, formState } = useForm(formResolve);
+  const router = useRouter();
 
-  const onSubmit = () => {
-    console.log("ADD EDIT SUBMITTED");
+  //   TODO: type all anys
+  const onSubmit = (data: any) => {
+    return !user ? createUser(data) : updateUser(user.id, data);
+  };
+
+  const createUser = (data: any) => {
+    return userService.register(data).then(() => {
+      alertService.success("User added", { keepAfterRouteChange: true });
+      router.push(".");
+    });
+  };
+
+  const updateUser = (id: number, data: any) => {
+    return userService.update(id, data).then(() => {
+      alertService.success("User updated", { keepAfterRouteChange: true });
+      router.push("..");
+    });
   };
   return (
     <form
