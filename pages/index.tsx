@@ -18,10 +18,11 @@ const Home: NextPage = () => {
           Welcome to <a href="#">Heavy Day!</a>
         </h1>
 
-        <p className={styles.description}>
-          move this to a form{" "}
-          <code className={styles.code}>pages/form.tsx</code>
-        </p>
+        <div className={styles.descridivtion}>
+        <Link href="/account/Login">Log In</Link>
+        {" "}
+        <Link href="/account/Register">Sign Up</Link>
+        </div>
       </main>
 
       {/* <footer className={styles.footer}>
